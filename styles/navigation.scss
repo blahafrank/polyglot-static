@@ -1,0 +1,100 @@
+.Navigation {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(255,255,255,0.6);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: calc(100vw - 40px);
+    padding: 20px;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include break-on('medium') {
+        width: calc(100vw - 80px);
+        padding: 20px 40px;
+    }
+
+    &__logoWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__logo {
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
+    }
+
+    &__logoText {
+        font-size: 30px;
+        font-weight: 500;
+        margin-top: -10px;
+    }
+
+    &__content {
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        @include break-on('medium') {
+            display: flex;
+        }
+    }
+
+    &__item {
+        padding: 0 3px;
+        border-bottom: 3px solid transparent;
+        margin: 0 15px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: border .1s ease-in-out;
+
+        @include break-on('large') {
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        &--active,
+        &:hover {
+            border-bottom: 3px solid $color-black;
+        }
+    }
+
+    &__button {
+        width: 210px;
+        height: 30px;
+        background-color: $color-black;
+        color: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        cursor: pointer;
+        border: 4px solid  $color-black;
+        font-weight: 500;
+        margin-left: 10px;
+        font-size: 14px;
+
+        @include break-on('large') {
+            width: 240px;
+            height: 35px;
+            margin-left: 30px;
+        }
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-black;
+        }
+    }
+
+    &__menuButton {
+        @include break-on('medium') {
+            display: none;
+        }
+    }
+}

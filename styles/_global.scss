@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    font-family: source-han-sans-simplified-c, sans-serif;
+    letter-spacing: 4px;
+    color: $color-black;
+    scrollbar-width: none;
+
+    &:-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+a { color: inherit; }
+
+.scroll-svg {
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+    display: none;
+
+    @include break-on('medium') {
+        display: block;
+    }
+}
+
+.scroll-weel-svg {
+    animation: scroll-wheel-animation 3s ease-in-out infinite;
+    transform: translate(12.5px, 10px);
+}
