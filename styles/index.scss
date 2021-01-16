@@ -10,6 +10,19 @@
     font-family: source-han-sans-simplified-c, sans-serif;
     letter-spacing: 4px;
     color: #333A40;
+    scrollbar-width: none;
+
+    &:-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 a { color: inherit; }
